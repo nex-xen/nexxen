@@ -1,0 +1,94 @@
+/* ---------------- RESET ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------------- BODY ---------------- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  background: #0a0d16;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* ---------------- BACKGROUND BLOBS ---------------- */
+.blob {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  filter: blur(130px);
+  opacity: 0.55;
+}
+
+.blob-purple {
+  background: #7c6cff;
+  top: -180px;
+  left: -180px;
+}
+
+.blob-blue {
+  background: #3ad5ff;
+  bottom: -180px;
+  right: -180px;
+}
+
+/* ---------------- CENTER WRAPPER ---------------- */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ---------------- GLASS CARD ---------------- */
+.glass-card {
+  max-width: 720px;
+  width: 100%;
+  padding: 60px 52px;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 26px;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 0 70px rgba(124, 108, 255, 0.28),
+    inset 0 0 24px rgba(255, 255, 255, 0.05);
+}
+
+/* ---------------- HEADLINE ---------------- */
+.glass-card h1 {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
+
+/* ---------------- TEXT ---------------- */
+.glass-card p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 44px;
+}
+
+/* ---------------- BUTTON ---------------- */
+.glass-btn {
+  display: inline-block;
+  padding: 14px 42px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+
+  background: linear-gradient(
+    135deg,
+    rgba(124, 108, 255, 0.9),
+    rgba(58, 213, 25
