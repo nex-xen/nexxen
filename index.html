@@ -5,31 +5,239 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nex-Xen</title>
 
-  <!-- Link to CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Apple-like Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- GLOBAL ---------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0b0f1a;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 80px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    h1, h2 {
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+    }
+
+    /* ---------- GLASS CARD ---------- */
+    .glass {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 50px;
+      max-width: 900px;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+      text-align: center;
+    }
+
+    /* ---------- BUTTON ---------- */
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 32px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #7f8cff, #5ddcff);
+      color: #000;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(125,150,255,0.4);
+    }
+
+    /* ---------- HERO ---------- */
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      margin-bottom: 20px;
+    }
+
+    /* ---------- GRID ---------- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    /* ---------- TEAM ---------- */
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7f8cff, #5ddcff);
+      margin: 0 auto 15px;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact a {
+      color: #7f8cff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* ---------- FLOATING BALLS ---------- */
+    .ball {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), rgba(255,255,255,0.05));
+      filter: blur(2px);
+      animation: float 12s infinite ease-in-out;
+      opacity: 0.4;
+    }
+
+    .ball.one { top: 10%; left: 10%; }
+    .ball.two { bottom: 15%; right: 10%; animation-delay: 3s; }
+    .ball.three { top: 50%; left: 80%; animation-delay: 6s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-40px); }
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      padding: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    @media (max-width: 600px) {
+      .glass {
+        padding: 35px 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- Background liquid blobs -->
-  <div class="blob blob-purple"></div>
-  <div class="blob blob-blue"></div>
+  <!-- Floating Glass Balls -->
+  <div class="ball one"></div>
+  <div class="ball two"></div>
+  <div class="ball three"></div>
 
-  <main class="wrapper">
-    <section class="glass-card">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="glass">
       <h1>Building Intelligent Digital Experiences</h1>
-
       <p>
-        Nex-Xen designs modern, scalable, and intelligent digital solutions
-        crafted for a future-first world.
+        Nex-Xen creates future-ready products that blend intelligence,
+        elegance, and scalability.
       </p>
+      <!-- CHANGE EMAIL HERE -->
+      <a href="mailto:binibunnycoin@gmail.com" class="btn">Get in Touch</a>
+    </div>
+  </section>
 
-      <!-- CHANGE EMAIL IF NEEDED -->
-      <a href="mailto:binibunnycoin@gmail.com" class="glass-btn">
-        Get in Touch
-      </a>
-    </section>
-  </main>
+  <!-- NEXT GEN -->
+  <section>
+    <div class="glass">
+      <h2>Next-Generation Thinking</h2>
+      <p>
+        We design with a future-first mindset—combining AI, automation,
+        and modern design principles to shape what’s next.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section>
+    <div class="glass">
+      <h2>Our Products</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>AI Assistants</h3>
+          <p>Smart conversational tools built for real productivity.</p>
+        </div>
+        <div class="card">
+          <h3>Digital Platforms</h3>
+          <p>Scalable web & mobile platforms with premium UX.</p>
+        </div>
+        <div class="card">
+          <h3>Automation</h3>
+          <p>Systems that remove friction and save time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section>
+    <div class="glass">
+      <h2>Our Team</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="avatar"></div>
+          <p>Design-driven thinkers</p>
+        </div>
+        <div class="card">
+          <div class="avatar"></div>
+          <p>Engineers & problem solvers</p>
+        </div>
+        <div class="card">
+          <div class="avatar"></div>
+          <p>Product strategists</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <div class="glass">
+      <h2>Let’s Build Something</h2>
+      <p>
+        Reach out to start your next digital experience with Nex-Xen.
+      </p>
+      <!-- CHANGE EMAIL HERE -->
+      <a href="mailto:binibunnycoin@gmail.com" class="btn">Contact Us</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Nex-Xen. Designed for the future.
+  </footer>
 
 </body>
 </html>
